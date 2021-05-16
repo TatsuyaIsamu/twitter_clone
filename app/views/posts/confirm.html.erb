@@ -1,0 +1,8 @@
+<div class="container">
+  <%= form_with(model:@post, local: true) do |form| %>
+    <%= form.hidden_field :content %>
+    <%= @post.content%>
+    <%= form.submit "確定する" %>
+    <%= form.submit "戻る", name: :back %>
+  <% end%>
+</div>
