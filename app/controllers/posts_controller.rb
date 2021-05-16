@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :catch_post, only: [:show, :edit, :update, :destroy] 
   def index
     @post = Post.all
   end
@@ -18,13 +19,10 @@ class PostsController < ApplicationController
     end
   end
   def show
-   @post = Post.find_by(id: params[:id])
   end
   def edit
-   @post = Post.find_by(id: params[:id])
   end
   def update
-    @post = Post.find_by(id: params[:id])
     if @post.update(content: params[:post][:content])
       redirect_to posts_path
     else
@@ -32,7 +30,6 @@ class PostsController < ApplicationController
     end
   end
   def destroy
-    @post = Post.find_by(id: params[:id])
     @post.destroy
     @post.save
     redirect_to posts_path
@@ -40,5 +37,10 @@ class PostsController < ApplicationController
   def confirm
     @post = Post.new(content: params[:post][:content])
     render :new if @post.invalid?
+  end
+
+  private
+  def catch_post
+  @post = Post.find_by(id: params[:id])
   end
 end
