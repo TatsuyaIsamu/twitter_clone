@@ -1,5 +1,5 @@
 <div class="container" >
-  <h1>つぶやき一覧</h1>  <p class="new_tweet">つぶやく</p>
+  <h1>つぶやき一覧</h1>  <p class="new_tweet"><%= link_to "つぶやく", new_post_path %></p>
     <table class="index_table" >
       <% @post.each do |post| %>
         <tr><td><%= post.content%></td><td>一覧表示</td><td>編集</td><td>削除</td></tr>
