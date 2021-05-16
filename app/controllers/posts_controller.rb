@@ -7,8 +7,11 @@ class PostsController < ApplicationController
   end
   def create
     @post = Post.new(content: params[:post][:content])
-    @post.save
-    redirect_to posts_path
+    if @post.save
+     redirect_to posts_path
+    else
+     render :new
+    end
   end
   def show
    @post = Post.find_by(id: params[:id])
