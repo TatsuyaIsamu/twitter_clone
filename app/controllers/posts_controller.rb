@@ -21,4 +21,11 @@ class PostsController < ApplicationController
     @post.update(content: params[:post][:content])
     redirect_to posts_path
   end
+  def destroy
+    @post = Post.find_by(id: params[:id])
+    @post.destroy
+    @post.save
+    redirect_to posts_path
+  end
+
 end
