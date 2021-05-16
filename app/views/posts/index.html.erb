@@ -1,10 +1,8 @@
 <div class="container" >
   <h1>つぶやき一覧</h1>  <p class="new_tweet">つぶやく</p>
     <table class="index_table" >
-      <tr><td>つぶやき内容</td><td>一覧表示</td><td>編集</td><td>削除</td></tr>
-      <tr><td>つぶやき内容</td><td>一覧表示</td><td>編集</td><td>削除</td></tr>
-      <tr><td>つぶやき内容</td><td>一覧表示</td><td>編集</td><td>削除</td></tr>
-      <tr><td>つぶやき内容</td><td>一覧表示</td><td>編集</td><td>削除</td></tr>
-      <tr><td>つぶやき内容</td><td>一覧表示</td><td>編集</td><td>削除</td></tr>
+      <% @post.each do |post| %>
+        <tr><td><%= post.content%></td><td>一覧表示</td><td>編集</td><td>削除</td></tr>
+      <% end%>
     </table>
 </div>
