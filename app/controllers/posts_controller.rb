@@ -12,6 +12,7 @@ class PostsController < ApplicationController
       render :new
     else  
       if @post.save
+      flash[:notice] = "つぶやきました"
       redirect_to posts_path
       else
       render :new
@@ -26,7 +27,7 @@ class PostsController < ApplicationController
     if @post.update(content: params[:post][:content])
       redirect_to posts_path
     else
-      render :new
+      render :edit
     end
   end
   def destroy

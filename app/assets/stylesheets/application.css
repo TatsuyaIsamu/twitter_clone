@@ -2,13 +2,16 @@
 header {
   margin-top: 20px;
   text-align: left;
+  margin-bottom: 40px;
 }
 
 body {
   text-align: center;
+  background-color: aqua;
+
 }
 
 table {
   margin  :auto;
-  
+
 }

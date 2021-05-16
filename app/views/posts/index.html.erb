@@ -1,5 +1,7 @@
 
-  <h1>つぶやき一覧</h1>  <p class="new_tweet"><%= link_to "つぶやく", new_post_path %></p>
+  <h1>つぶやき一覧</h1>  
+  <p><%= notice%></p>
+  <p class="new_tweet"><%= link_to "つぶやく", new_post_path %></p>
     <table class="index_table" >
       <% @post.each do |post| %>
        <tr>
