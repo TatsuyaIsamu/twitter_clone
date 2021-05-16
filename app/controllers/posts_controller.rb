@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :catch_post, only: [:show, :edit, :update, :destroy] 
   def index
-    @post = Post.all
+    @post = Post.all.order(content: :desc)
   end
   def new
     @post = Post.new
